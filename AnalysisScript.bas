@@ -70,51 +70,43 @@ For Each ws In ActiveWorkbook.Worksheets
             iRow = iRow + 1
         Loop
         
+        With ActiveCell.Offset(0, 1)
+            .Value = Cells(iRow - 1, 6).Value - iStart
+            .Font.Bold = True
+        End With
         
-        If iStart = 0 And TickerTotal = 0 Then ''''Had to add this because of PLNT
-            With ActiveCell.Offset(0, 1)
-                .Value = 0
-                .Font.Bold = True
-                .Interior.ColorIndex = 3
-            End With
+        If ActiveCell.Offset(0, 1).Value <= 0 Then
+            ActiveCell.Offset(0, 1).Interior.ColorIndex = 3
+        Else
+            ActiveCell.Offset(0, 1).Interior.ColorIndex = 4
+        End If
+        
+        If iStart = 0 Then
             With ActiveCell.Offset(0, 2)
                 .Value = 0
                 .Style = "Percent"
             End With
-            ActiveCell.Offset(0, 3).Value = TickerTotal
-            
         Else
-            With ActiveCell.Offset(0, 1)
-                .Value = Cells(iRow - 1, 6).Value - iStart
-                .Font.Bold = True
-            End With
-            
-            If ActiveCell.Offset(0, 1).Value <= 0 Then
-                ActiveCell.Offset(0, 1).Interior.ColorIndex = 3
-            Else
-                ActiveCell.Offset(0, 1).Interior.ColorIndex = 4
-            End If
-            
             With ActiveCell.Offset(0, 2)
                 .Value = ActiveCell.Offset(0, 1).Value / iStart
                 .Style = "Percent"
             End With
-            ActiveCell.Offset(0, 3).Value = TickerTotal
+        End If
         
+        ActiveCell.Offset(0, 3).Value = TickerTotal
+    
 'Check to see if the current ticker satisfies any of the bonus data
-            If ActiveCell.Offset(0, 2).Value < DecreaseValue Then
-                DecreaseValue = ActiveCell.Offset(0, 2).Value
-                DecreaseTicker = Ticker
-            End If
-            If ActiveCell.Offset(0, 2).Value > IncreaseValue Then
-                IncreaseValue = ActiveCell.Offset(0, 2).Value
-                IncreaseTicker = Ticker
-            End If
-            If ActiveCell.Offset(0, 3).Value > VolumeValue Then
-                VolumeValue = ActiveCell.Offset(0, 3).Value
-                VolumeTicker = Ticker
-            End If
-            
+        If ActiveCell.Offset(0, 2).Value < DecreaseValue Then
+            DecreaseValue = ActiveCell.Offset(0, 2).Value
+            DecreaseTicker = Ticker
+        End If
+        If ActiveCell.Offset(0, 2).Value > IncreaseValue Then
+            IncreaseValue = ActiveCell.Offset(0, 2).Value
+            IncreaseTicker = Ticker
+        End If
+        If ActiveCell.Offset(0, 3).Value > VolumeValue Then
+            VolumeValue = ActiveCell.Offset(0, 3).Value
+            VolumeTicker = Ticker
         End If
     
         ActiveCell.Offset(1, 0).Activate
