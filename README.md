@@ -1,20 +1,14 @@
-# VBA Homework - The VBA of Wall Street
+# VBA Challenge - The VBA of Wall Street
 
 ## Background
 
-You are well on your way to becoming a programmer and Excel master! In this homework assignment you will use VBA scripting to analyze real stock market data. Depending on your comfort level with VBA, you may choose to challenge yourself with a few of the challenge tasks.
-
-### Before You Begin
-
-1. Create a new repository for this project called `VBA-challenge`. **Do not add this homework to an existing repository**.
-
-2. Inside the new repository that you just created, add any VBA files you use for this assignment. These will be the main scripts to run for each analysis.
+In this challenge you will use VBA scripting to analyze real stock market data. If looking for an extra challenge, there is a bonus section.
 
 ### Files
 
-* [Test Data](Resources/alphabetical_testing.xlsx) - Use this while developing your scripts.
+* [Test Data](Resources/alphabetical_testing.xlsx) - Use this while developing scripts.
 
-* [Stock Data](Resources/Multiple_year_stock_data.xlsx) - Run your scripts on this data to generate the final homework report.
+* [Stock Data](Resources/Multiple_year_stock_data.xlsx) - Run your scripts on this data to generate the final report.
 
 ### Stock market analyst
 
@@ -38,17 +32,17 @@ You are well on your way to becoming a programmer and Excel master! In this home
 
 ![moderate_solution](Images/moderate_solution.png)
 
-### CHALLENGES
+* Make the appropriate adjustments to your VBA script that will allow it to run on every worksheet, i.e., every year, just by running the VBA script once.
 
-1. Your solution will also be able to return the stock with the "Greatest % increase", "Greatest % decrease" and "Greatest total volume". The solution will look as follows:
+### BONUS
+
+* Your solution will also be able to return the stock with the "Greatest % increase", "Greatest % decrease" and "Greatest total volume". The solution will look as follows:
 
 ![hard_solution](Images/hard_solution.png)
 
-2. Make the appropriate adjustments to your VBA script that will allow it to run on every worksheet, i.e., every year, just by running the VBA script once.
-
 ### Other Considerations
 
-* Use the sheet `alphabetical_testing.xlsx` while developing your code. This data set is smaller and will allow you to test faster. Your code should run on this file in less than 3-5 minutes.
+* Use the sheet `alphabetical_testing.xlsx` while developing your code. This data set is smaller and will allow you to test faster. Fast code should run on this file in less than 30 seconds.
 
 * Make sure that the script acts the same on each sheet. The joy of VBA is to take the tediousness out of repetitive task and run over and over again with a click of the button.
 
@@ -59,11 +53,6 @@ You are well on your way to becoming a programmer and Excel master! In this home
   * A screen shot for each year of your results on the Multi Year Stock Data.
 
   * VBA Scripts as separate files.
-
-* Ensure your repository has regular commits (i.e. 20+ commits), a thorough README.md file
-
-* After everything has been saved, create a sharable link and submit that to <https://bootcampspot-v2.com/>.
-
 - - -
 
 ### Copyright
